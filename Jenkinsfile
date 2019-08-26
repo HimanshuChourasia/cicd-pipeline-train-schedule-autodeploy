@@ -9,10 +9,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+            	echo "$env.BRANCH_NAME"
                 echo 'Running build automation'
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
-                echo branch 
+                
             }
         }
         stage('Build and push  docker image') {
