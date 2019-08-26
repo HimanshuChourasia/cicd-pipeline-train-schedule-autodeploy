@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: train-schedule
-        image: $dockerhub_repo:$BUILD_NUMBER
+        image: $DOCKER_HUB_REPO:$BUILD_NUMBER
         ports:
         - containerPort: 8080
         livenessProbe:
